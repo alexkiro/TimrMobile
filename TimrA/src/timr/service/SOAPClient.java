@@ -39,8 +39,8 @@ public final class SOAPClient {
         {
             http.call(namespace+method, envelope);
             SoapObject response = (SoapObject)envelope.bodyIn;
-            //System.out.println(response.toString());
-            return response.toString();                        
+            //System.out.println(response.getPropertyAsString(0));
+            return response.getPropertyAsString(0);                        
         }
         catch(Exception e)
         {
