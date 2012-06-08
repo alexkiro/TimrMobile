@@ -22,7 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10" >
+            android:ems="10"
+            android:text="Adrian2" >
 
             <requestFocus />
         </EditText>
@@ -44,7 +45,8 @@
             android:id="@+id/passText"
             android:layout_width="214dp"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:text="Adrian2" />
 
     </LinearLayout>
 

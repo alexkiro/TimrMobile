@@ -4,10 +4,10 @@
  */
 package timr.model;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+
 import timr.model.messages.Message;
 import timr.model.timetable.Timetable;
 import timr.model.user.Faculty;
@@ -22,6 +22,9 @@ import timr.service.Services;
  */
 public class MainModel {
     
+	public String tempU;
+	public String tempP;
+	
     public UserType userType;
     public Stud stud = null;
     public Prof prof = null;

@@ -40,7 +40,7 @@ public class SendActivity extends Activity implements Runnable{
 		send.setText("Send");
 		progress = new ProgressDialog(this);	
 		
-		startLoad("busaco","busaco");
+		startLoad(MainModel.getInstance().tempU, MainModel.getInstance().tempP);
 	}
 
 	public void startLoad(String u, String p){

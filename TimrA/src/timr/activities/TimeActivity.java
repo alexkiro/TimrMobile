@@ -12,6 +12,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,9 +36,33 @@ public class TimeActivity extends Activity implements Runnable{
 		pager = (ViewPager) findViewById(R.id.main_pager);
 		adapter = new TimrPageAdapter();
 
-		progress = new ProgressDialog(this);
+		progress = new ProgressDialog(this);	
 		
-		startLoad("Adrian2", null);
+		startLoad(MainModel.getInstance().tempU, MainModel.getInstance().tempP);
+		
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+
+		MenuItem item1 = menu.add(Menu.NONE, 0, Menu.NONE, "Refresh");
+		MenuItem item2 = menu.add(Menu.NONE, 1, Menu.NONE, "Logout");
+
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		if (item.getItemId() == 1) {
+			TimrAActivity.instance.finish();
+			return true;
+		} else if (item.getItemId() == 0) {
+			startLoad(username,pass);
+			return true;
+		}
+		return false;
 	}
 	
 	public void startLoad(String u, String p){

@@ -1,6 +1,7 @@
 package timr.activities;
 
 import timr.android.R;
+import timr.model.MainModel;
 import timr.service.Services;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -63,6 +64,9 @@ public class MainActivity extends Activity implements Runnable{
 		
 		String user = userText.getText().toString();
 		String pass = passText.getText().toString();
+		
+		MainModel.getInstance().tempU = user;
+		MainModel.getInstance().tempP = pass;
 		
 		valid = Services.validateUser(user, pass);
 		handler.sendEmptyMessage(0);
